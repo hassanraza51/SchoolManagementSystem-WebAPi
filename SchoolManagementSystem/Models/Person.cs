@@ -23,9 +23,8 @@ namespace SchoolManagementSystem.Models
         [Required(ErrorMessage = "{0} is required")]
         public int CNIC { get; set; }
 
-      
+        [EnumDataType(typeof(Gender))]
         public Gender Gender { get; set; }
-        
 
         [Required(ErrorMessage ="{0} is required")] 
         public int ContactNumber { get; set; }

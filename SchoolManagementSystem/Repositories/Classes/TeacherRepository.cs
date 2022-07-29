@@ -31,6 +31,7 @@ namespace SchoolManagementSystem.Repositories.Classes
                 if (existingTeacher == null)
                     return await Add(entity);
 
+                existingTeacher.TeacherID = entity.TeacherID;
                 existingTeacher.Image = entity.Image;
                 existingTeacher.FirstName = entity.FirstName;
                 existingTeacher.LastName = entity.LastName;

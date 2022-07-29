@@ -10,7 +10,9 @@ namespace SchoolManagementSystem.Models
     [Index(nameof(CNIC),IsUnique =true)]
     public class Student:Person
     {
-        public string StudentId { get; set; }     
+        public string StudentId { get; set; }
+
+        [EnumDataType(typeof(Class))]
         public Class Class { get; set; }
         public string Section { get; set; }=String.Empty;
 
@@ -23,6 +25,6 @@ namespace SchoolManagementSystem.Models
         [Required(ErrorMessage = "{0} is required")]
         [ForeignKey("Guardian")]
         public int GuardianID { get; }
-        public Guardian Guardian { get; set; }
+        public Guardian? Guardian { get; set; }
     }
 }
